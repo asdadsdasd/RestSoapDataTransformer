@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.XML;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,11 +44,12 @@ public class MainService {
             );
 
             createEntityInDB(person);
+
+            String xmlString = JsonToXmlConveter.convertJsonToXml(json);
+            System.out.println(xmlString);
         } catch (JSONException e) {
             throw new RuntimeException("Ошибка при разборе JSON", e);
         }
-
-
     }
 
     @Transactional
@@ -71,5 +73,11 @@ public class MainService {
             throw new RuntimeException(e);
         }
         return date;
+    }
+
+    private class JsonToXmlConveter{
+        public static String convertJsonToXml(JSONObject json){
+            return XML.toString(json);
+        }
     }
 }
