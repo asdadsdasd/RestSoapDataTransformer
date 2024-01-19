@@ -11,8 +11,6 @@ import ru.kozarez.restapp.dao.MainDAOInterface;
 import ru.kozarez.restapp.entities.PersonEntity;
 import ru.kozarez.restapp.models.PersonModel;
 
-import java.text.SimpleDateFormat;
-
 @Service
 @RequiredArgsConstructor
 public class MainService {

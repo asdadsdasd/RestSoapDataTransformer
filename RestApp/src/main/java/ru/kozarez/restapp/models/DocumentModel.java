@@ -4,11 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.kozarez.restapp.entities.enums.DocumentType;
-
-import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
-@XmlRootElement(name = "document")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
