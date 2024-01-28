@@ -1,0 +1,19 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.test-soap.com/"
+           targetNamespace="http://www.test-soap.com/" elementFormDefault="qualified">
+
+    <xs:element name="getConvertedXmlRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sourceXmlText" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getConvertedXmlResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="convertedXmlText" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
