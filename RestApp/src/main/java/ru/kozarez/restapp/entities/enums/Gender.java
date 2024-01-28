@@ -1,5 +1,8 @@
 package ru.kozarez.restapp.entities.enums;
 
 public enum Gender {
-    MAN, WOMAN
+    MAN, WOMAN;
+
+    private Gender() {
+    }
 }

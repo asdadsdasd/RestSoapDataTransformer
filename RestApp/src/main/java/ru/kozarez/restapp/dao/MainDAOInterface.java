@@ -1,8 +1,7 @@
 package ru.kozarez.restapp.dao;
 
-import ru.kozarez.restapp.entities.PersonEntity;
-
 import java.util.List;
+import ru.kozarez.restapp.entities.PersonEntity;
 
 public interface MainDAOInterface {
     PersonEntity getById(Long id);
