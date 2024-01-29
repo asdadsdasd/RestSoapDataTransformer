@@ -1,12 +1,12 @@
 package ru.kozarez.restapp.clients;
 
+import com.test_soap.GetConvertedXmlRequest;
+import com.test_soap.GetConvertedXmlResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.stereotype.Component;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import org.springframework.ws.soap.client.core.SoapActionCallback;
-import ru.test_soap.GetConvertedXmlRequest;
-import ru.test_soap.GetConvertedXmlResponse;
 
 @Component
 public class SoapSenderClient extends WebServiceGatewaySupport {

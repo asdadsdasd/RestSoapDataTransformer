@@ -11,7 +11,7 @@ public class SoapConf {
     public Jaxb2Marshaller marshaller() {
         Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
         //marshaller.setContextPath("ru.test_soap");
-        marshaller.setPackagesToScan("ru.test_soap");
+        marshaller.setPackagesToScan("com.test_soap");
         return marshaller;
     }
 }

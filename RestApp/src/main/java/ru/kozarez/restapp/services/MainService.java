@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.test_soap.GetConvertedXmlResponse;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Unmarshaller;
@@ -15,7 +16,6 @@ import ru.kozarez.restapp.clients.SoapSenderClient;
 import ru.kozarez.restapp.dao.MainDAOInterface;
 import ru.kozarez.restapp.entities.PersonEntity;
 import ru.kozarez.restapp.models.PersonModel;
-import ru.test_soap.GetConvertedXmlResponse;
 
 import java.io.StringReader;
 import java.text.SimpleDateFormat;
@@ -48,8 +48,8 @@ public class MainService {
             JAXBContext jaxbContext = JAXBContext.newInstance(PersonModel.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 
-            PersonModel convertedPersonDTO = (PersonModel) jaxbUnmarshaller.unmarshal(new StringReader(response.getConvertedXmlText()));
-            PersonEntity convertedPersonEntity = objectMapper.convertValue(convertedPersonDTO, PersonEntity.class);
+            PersonModel convertedPersonModel = (PersonModel) jaxbUnmarshaller.unmarshal(new StringReader(response.getConvertedXmlText()));
+            PersonEntity convertedPersonEntity = objectMapper.convertValue(convertedPersonModel, PersonEntity.class);
         } catch (JAXBException | JsonProcessingException e) {
             throw new RuntimeException("Xml converting exception: " + e);
         }
