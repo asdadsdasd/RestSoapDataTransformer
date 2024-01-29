@@ -5,23 +5,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.test_soap.GetConvertedXmlResponse;
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBElement;
-import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Unmarshaller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.kozarez.restapp.clients.SoapSenderClient;
 import ru.kozarez.restapp.dao.MainDAOInterface;
 import ru.kozarez.restapp.entities.PersonEntity;
 import ru.kozarez.restapp.models.PersonModel;
-
-import javax.xml.transform.stream.StreamSource;
-import java.io.StringReader;
 import java.text.SimpleDateFormat;
 
 @Service
