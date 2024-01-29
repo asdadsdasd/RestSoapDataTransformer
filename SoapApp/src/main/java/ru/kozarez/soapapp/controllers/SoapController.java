@@ -2,6 +2,9 @@ package ru.kozarez.soapapp.controllers;
 
 import com.test_soap.GetConvertedXmlRequest;
 import com.test_soap.GetConvertedXmlResponse;
+import jakarta.websocket.ClientEndpoint;
+import jakarta.websocket.server.ServerEndpoint;
+import jakarta.xml.ws.WebEndpoint;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
@@ -20,6 +23,7 @@ public class SoapController {
     @PayloadRoot(namespace = WebServiceConfig.NAMESPACE_URI, localPart = "getConvertedXmlRequest")
     @ResponsePayload
     public GetConvertedXmlResponse handleXmlRequest(@RequestPayload GetConvertedXmlRequest request) {
+        System.out.println("676");
         GetConvertedXmlResponse response = new GetConvertedXmlResponse();
         try {
             response.setConvertedXmlText(convertService.convertXml(request.getSourceXmlText()));
