@@ -18,8 +18,8 @@ public class MainController {
     public ResponseEntity<?> send(@RequestBody PersonModel person) {
         try {
             System.out.println("Received JSON: " + person.toString());
-            this.mainService.send(person);
-            return ResponseEntity.ok("Everything fine");
+            String stringResponse = mainService.send(person);
+            return ResponseEntity.ok("Everything fine. Returned data: \n" + stringResponse);
         } catch (Exception var3) {
             var3.printStackTrace();
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("JSON processing exception");
