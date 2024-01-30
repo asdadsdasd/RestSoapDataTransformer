@@ -1,5 +1,7 @@
 package ru.kozarez.restapp.controllers;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,17 +13,18 @@ import ru.kozarez.restapp.services.MainService;
 
 @RestController
 public class MainController {
+    private static final Logger logger = LogManager.getLogger(MainController.class);
     @Autowired
     private final MainService mainService;
 
     @PostMapping({"/send-json-data"})
     public ResponseEntity<?> send(@RequestBody PersonModel person) {
+        logger.info("Received JSON person: {}", person);
         try {
-            System.out.println("Received JSON: " + person.toString());
             String stringResponse = mainService.send(person);
             return ResponseEntity.ok("Everything fine. Returned data: \n" + stringResponse);
-        } catch (Exception var3) {
-            var3.printStackTrace();
+        } catch (Exception e) {
+            logger.error("JSON processing exception: {}", e);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("JSON processing exception");
         }
     }
