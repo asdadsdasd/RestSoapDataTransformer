@@ -4,7 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.kozarez.restapp.entities.enums.DocumentType;
-import java.util.Date;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -13,5 +15,5 @@ public class DocumentModel {
     private String series;
     private String number;
     private DocumentType type;
-    private Date issueDate;
+    private LocalDate issueDate;
 }

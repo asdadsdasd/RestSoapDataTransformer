@@ -1,6 +1,8 @@
 package ru.kozarez.restapp.entities;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,6 +27,6 @@ public class DocumentEntity {
     @Enumerated(EnumType.STRING)
     private DocumentType type;
     @Column(name = "issue_date")
-    private Date issueDate;
+    private LocalDate issueDate;
 
 }

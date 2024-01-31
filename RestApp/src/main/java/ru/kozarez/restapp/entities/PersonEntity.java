@@ -1,6 +1,7 @@
 package ru.kozarez.restapp.entities;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -25,7 +26,7 @@ public class PersonEntity {
     @Column(name = "patronymic")
     private String patronymic;
     @Column(name = "birth_date")
-    private Date birthDate;
+    private LocalDate birthDate;
     @Column(name = "gender")
     @Enumerated(EnumType.STRING)
     private Gender gender;
