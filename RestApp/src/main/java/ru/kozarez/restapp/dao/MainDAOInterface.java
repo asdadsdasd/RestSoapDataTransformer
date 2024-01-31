@@ -12,5 +12,5 @@ public interface MainDAOInterface {
 
     void update(PersonEntity person);
 
-    void delete(PersonEntity person);
+    void delete(Long id);
 }

@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.kozarez.restapp.clients.SoapSenderClient;
-import ru.kozarez.restapp.controllers.MainController;
 import ru.kozarez.restapp.dao.MainDAOInterface;
 import ru.kozarez.restapp.entities.PersonEntity;
 import ru.kozarez.restapp.models.PersonModel;
@@ -33,13 +32,13 @@ public class MainService {
         ObjectMapper objectMapper = new ObjectMapper();
         PersonEntity personEntity = objectMapper.convertValue(personModel, PersonEntity.class);
 
-        try {
+        /*try {*/
             mainDAO.create(personEntity);
             logger.info("Put received person to database");
-        }catch (Exception e){
+        /*}catch (Exception e){
             logger.error("Database putting error");
             throw new RuntimeException(e);
-        }
+        }*/
         XmlMapper xmlMapper = new XmlMapper();
         xmlMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
         xmlMapper.enable(SerializationFeature.INDENT_OUTPUT);

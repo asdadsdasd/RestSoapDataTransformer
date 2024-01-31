@@ -1,36 +1,39 @@
 package ru.kozarez.restapp.dao;
 
 import java.util.List;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import ru.kozarez.restapp.entities.PersonEntity;
 
 @Repository
 public class MainDAOImplementation implements MainDAOInterface {
-    @Autowired
-    private SessionFactory sessionFactory;
-
-    public MainDAOImplementation() {
-    }
+    @PersistenceContext
+    private EntityManager entityManager;
 
     public PersonEntity getById(Long id) {
-        return (PersonEntity)this.sessionFactory.getCurrentSession().get(PersonEntity.class, id);
+        PersonEntity person = entityManager.find(PersonEntity.class, id);
+        entityManager.detach(person);
+        return person;
     }
 
     public List<PersonEntity> getAll() {
-        return this.sessionFactory.getCurrentSession().createQuery("from PersonEntity").list();
+        return entityManager.createQuery("from PersonEntity", PersonEntity.class).getResultList();
     }
 
     public void create(PersonEntity person) {
-        this.sessionFactory.getCurrentSession().save(person);
+        entityManager.persist(person);
     }
 
     public void update(PersonEntity person) {
-        this.sessionFactory.getCurrentSession().update(person);
+        entityManager.merge(person);
     }
 
-    public void delete(PersonEntity person) {
-        this.sessionFactory.getCurrentSession().delete(person);
+    public void delete(Long id) {
+        PersonEntity person = entityManager.find(PersonEntity.class, id);
+        if (person != null) {
+            entityManager.remove(person);
+        }
     }
 }
