@@ -5944,3 +5944,431 @@ Caused by: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Java 8
 	at ru.kozarez.restapp.services.MainService.send(MainService.java:49) ~[classes/:?]
 	... 66 more
 2024-56-31 17:56:10.627 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-56-31 17:56:14.278 [main] INFO  ru.kozarez.restapp.RestAppApplication - Starting RestAppApplication using Java 17.0.9 with PID 20764 (C:\Users\kozarez\java-projects\RestSoap\RestSoapDataTransformer\RestApp\target\classes started by kozarez in C:\Users\kozarez\java-projects\RestSoap\RestSoapDataTransformer)
+2024-56-31 17:56:14.284 [main] INFO  ru.kozarez.restapp.RestAppApplication - No active profile set, falling back to 1 default profile: "default"
+2024-56-31 17:56:14.761 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-56-31 17:56:14.779 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2024-56-31 17:56:14.959 [main] WARN  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-56-31 17:56:14.978 [main] INFO  org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-56-31 17:56:15.168 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-56-31 17:56:15.233 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 918 ms
+2024-56-31 17:56:15.420 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-56-31 17:56:15.454 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-56-31 17:56:15.660 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-56-31 17:56:15.851 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-56-31 17:56:16.590 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-56-31 17:56:16.666 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-56-31 17:56:16.763 [main] INFO  org.springframework.ws.soap.saaj.SaajSoapMessageFactory - Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2024-56-31 17:56:16.841 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-56-31 17:56:17.136 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-56-31 17:56:17.147 [main] INFO  ru.kozarez.restapp.RestAppApplication - Started RestAppApplication in 3.143 seconds (process running for 3.88)
+2024-56-31 17:56:37.100 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-56-31 17:56:37.102 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-56-31 17:56:37.217 [http-nio-8080-exec-1] INFO  ru.kozarez.restapp.controllers.MainController - Received JSON person: PersonModel(name=Тест, surname=Тестов, patronymic=Тестович, birthDate=1990-01-01, gender=MAN, document=DocumentModel(series=1333, number=112233, type=PASSPORT, issueDate=2020-01-01))
+2024-56-31 17:56:37.271 [http-nio-8080-exec-1] INFO  ru.kozarez.restapp.services.MainService - Put received person to database
+2024-56-31 17:56:37.443 [http-nio-8081-exec-1] INFO  org.springframework.ws.transport.http.MessageDispatcherServlet - Initializing Servlet 'messageDispatcherServlet'
+2024-56-31 17:56:37.447 [http-nio-8081-exec-1] INFO  org.springframework.ws.soap.saaj.SaajSoapMessageFactory - Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2024-56-31 17:56:37.460 [http-nio-8081-exec-1] INFO  org.springframework.ws.transport.http.MessageDispatcherServlet - Completed initialization in 17 ms
+2024-56-31 17:56:37.617 [http-nio-8081-exec-1] INFO  ru.kozarez.soapapp.controllers.SoapController - Received XML: <PersonModel>
+  <name>Тест</name>
+  <surname>Тестов</surname>
+  <patronymic>Тестович</patronymic>
+  <birthDate>1990-01-01</birthDate>
+  <gender>MAN</gender>
+  <document>
+    <series>1333</series>
+    <number>112233</number>
+    <type>PASSPORT</type>
+    <issueDate>2020-01-01</issueDate>
+  </document>
+</PersonModel>
+
+2024-56-31 17:56:37.707 [http-nio-8081-exec-1] INFO  ru.kozarez.soapapp.services.ConvertService - Successfully transform XML
+2024-56-31 17:56:37.707 [http-nio-8081-exec-1] INFO  ru.kozarez.soapapp.controllers.SoapController - Sent response back
+2024-56-31 17:56:37.775 [http-nio-8080-exec-1] INFO  ru.kozarez.restapp.services.MainService - Put converted person to database
+2024-05-31 18:05:18.719 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-32-01 10:32:43.657 [main] INFO  ru.kozarez.restapp.RestAppApplication - Starting RestAppApplication using Java 17.0.9 with PID 14300 (C:\Users\kozarez\java-projects\RestSoap\RestSoapDataTransformer\RestApp\target\classes started by kozarez in C:\Users\kozarez\java-projects\RestSoap\RestSoapDataTransformer)
+2024-32-01 10:32:43.666 [main] INFO  ru.kozarez.restapp.RestAppApplication - No active profile set, falling back to 1 default profile: "default"
+2024-32-01 10:32:44.420 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-32-01 10:32:44.443 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2024-32-01 10:32:44.709 [main] WARN  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-32-01 10:32:44.749 [main] INFO  org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-32-01 10:32:45.032 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-32-01 10:32:45.110 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1408 ms
+2024-32-01 10:32:45.384 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-32-01 10:32:45.425 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-32-01 10:32:45.727 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-32-01 10:32:46.112 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-32-01 10:32:47.085 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-32-01 10:32:47.224 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-32-01 10:32:47.395 [main] INFO  org.springframework.ws.soap.saaj.SaajSoapMessageFactory - Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2024-32-01 10:32:47.484 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-32-01 10:32:47.883 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-32-01 10:32:47.897 [main] INFO  ru.kozarez.restapp.RestAppApplication - Started RestAppApplication in 4.582 seconds (process running for 5.94)
+2024-32-01 10:32:53.485 [main] INFO  ru.kozarez.soapapp.SoapAppApplication - Starting SoapAppApplication using Java 17.0.9 with PID 18540 (C:\Users\kozarez\java-projects\RestSoap\RestSoapDataTransformer\SoapApp\target\classes started by kozarez in C:\Users\kozarez\java-projects\RestSoap\RestSoapDataTransformer)
+2024-32-01 10:32:53.500 [main] INFO  ru.kozarez.soapapp.SoapAppApplication - No active profile set, falling back to 1 default profile: "default"
+2024-32-01 10:32:54.137 [main] WARN  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'webServiceConfig' of type [ru.kozarez.soapapp.configurations.WebServiceConfig$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [annotationActionEndpointMapping]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-32-01 10:32:54.138 [main] WARN  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-32-01 10:32:54.154 [main] INFO  org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-32-01 10:32:54.347 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2024-32-01 10:32:54.412 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 875 ms
+2024-32-01 10:32:54.843 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
+2024-32-01 10:32:54.855 [main] INFO  ru.kozarez.soapapp.SoapAppApplication - Started SoapAppApplication in 1.715 seconds (process running for 2.663)
+2024-32-01 10:32:58.839 [http-nio-8080-exec-4] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-32-01 10:32:58.840 [http-nio-8080-exec-4] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-32-01 10:32:58.983 [http-nio-8080-exec-4] INFO  ru.kozarez.restapp.controllers.MainController - Received JSON person: PersonModel(name=Тест, surname=Тестов, patronymic=Тестович, birthDate=1990-01-01, gender=MAN, document=DocumentModel(series=1333, number=112233, type=PASSPORT, issueDate=2020-01-01))
+2024-32-01 10:32:59.063 [http-nio-8080-exec-4] INFO  ru.kozarez.restapp.services.MainService - Put received person to database
+2024-32-01 10:32:59.275 [http-nio-8081-exec-1] INFO  org.springframework.ws.transport.http.MessageDispatcherServlet - Initializing Servlet 'messageDispatcherServlet'
+2024-32-01 10:32:59.279 [http-nio-8081-exec-1] INFO  org.springframework.ws.soap.saaj.SaajSoapMessageFactory - Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2024-32-01 10:32:59.293 [http-nio-8081-exec-1] INFO  org.springframework.ws.transport.http.MessageDispatcherServlet - Completed initialization in 18 ms
+2024-32-01 10:32:59.473 [http-nio-8081-exec-1] INFO  ru.kozarez.soapapp.controllers.SoapController - Received XML: <PersonModel>
+  <name>Тест</name>
+  <surname>Тестов</surname>
+  <patronymic>Тестович</patronymic>
+  <birthDate>1990</birthDate>
+  <birthDate>1</birthDate>
+  <birthDate>1</birthDate>
+  <gender>MAN</gender>
+  <document>
+    <series>1333</series>
+    <number>112233</number>
+    <type>PASSPORT</type>
+    <issueDate>2020</issueDate>
+    <issueDate>1</issueDate>
+    <issueDate>1</issueDate>
+  </document>
+</PersonModel>
+
+2024-32-01 10:32:59.684 [http-nio-8081-exec-1] INFO  ru.kozarez.soapapp.services.ConvertService - Successfully transform XML
+2024-32-01 10:32:59.685 [http-nio-8081-exec-1] INFO  ru.kozarez.soapapp.controllers.SoapController - Sent response back
+2024-32-01 10:32:59.776 [http-nio-8080-exec-4] ERROR ru.kozarez.restapp.services.MainService - XML to pojo converting error: Cannot deserialize value of type `java.time.LocalDate` from String "1": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '1' could not be parsed at index 0
+ at [Source: (StringReader); line: 1, column: 1] (through reference chain: ru.kozarez.restapp.models.PersonModel["birthDate"])
+2024-32-01 10:32:59.779 [http-nio-8080-exec-4] ERROR ru.kozarez.restapp.controllers.MainController - JSON processing exception: {}
+java.lang.RuntimeException: Error converting XML to POJO
+	at ru.kozarez.restapp.services.MainService.send(MainService.java:82) ~[classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352) ~[spring-aop-6.1.2.jar:6.1.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.2.jar:6.1.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.2.jar:6.1.2]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765) ~[spring-aop-6.1.2.jar:6.1.2]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-6.1.2.jar:6.1.2]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385) ~[spring-tx-6.1.2.jar:6.1.2]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.2.jar:6.1.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.2.jar:6.1.2]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765) ~[spring-aop-6.1.2.jar:6.1.2]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717) ~[spring-aop-6.1.2.jar:6.1.2]
+	at ru.kozarez.restapp.services.MainService$$SpringCGLIB$$0.send(<generated>) ~[classes/:?]
+	at ru.kozarez.restapp.controllers.MainController.send(MainController.java:24) [classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262) [spring-web-6.1.2.jar:6.1.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) [spring-web-6.1.2.jar:6.1.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) [spring-webmvc-6.1.2.jar:6.1.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917) [spring-webmvc-6.1.2.jar:6.1.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829) [spring-webmvc-6.1.2.jar:6.1.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-6.1.2.jar:6.1.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.1.2.jar:6.1.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.1.2.jar:6.1.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.1.2.jar:6.1.2]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) [spring-webmvc-6.1.2.jar:6.1.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [tomcat-embed-core-10.1.17.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.1.2.jar:6.1.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.17.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.1.2.jar:6.1.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.1.2.jar:6.1.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.1.2.jar:6.1.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.1.2.jar:6.1.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.1.2.jar:6.1.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.1.2.jar:6.1.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at java.base/java.lang.Thread.run(Thread.java:840) [?:?]
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDate` from String "1": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '1' could not be parsed at index 0
+ at [Source: (StringReader); line: 1, column: 1] (through reference chain: ru.kozarez.restapp.models.PersonModel["birthDate"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1958) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1245) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.datatype.jsr310.deser.JSR310DeserializerBase._handleDateTimeException(JSR310DeserializerBase.java:176) ~[jackson-datatype-jsr310-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer._fromString(LocalDateDeserializer.java:178) ~[jackson-datatype-jsr310-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer.deserialize(LocalDateDeserializer.java:91) ~[jackson-datatype-jsr310-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer.deserialize(LocalDateDeserializer.java:37) ~[jackson-datatype-jsr310-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:310) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.dataformat.xml.deser.XmlDeserializationContext.readRootValue(XmlDeserializationContext.java:91) ~[jackson-dataformat-xml-2.13.4.jar:2.13.4]
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4899) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3846) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3814) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at ru.kozarez.restapp.services.MainService.send(MainService.java:79) ~[classes/:?]
+	... 66 more
+Caused by: java.time.format.DateTimeParseException: Text '1' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052) ~[?:?]
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954) ~[?:?]
+	at java.base/java.time.LocalDate.parse(LocalDate.java:430) ~[?:?]
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer._fromString(LocalDateDeserializer.java:176) ~[jackson-datatype-jsr310-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer.deserialize(LocalDateDeserializer.java:91) ~[jackson-datatype-jsr310-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer.deserialize(LocalDateDeserializer.java:37) ~[jackson-datatype-jsr310-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:310) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.dataformat.xml.deser.XmlDeserializationContext.readRootValue(XmlDeserializationContext.java:91) ~[jackson-dataformat-xml-2.13.4.jar:2.13.4]
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4899) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3846) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3814) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at ru.kozarez.restapp.services.MainService.send(MainService.java:79) ~[classes/:?]
+	... 66 more
+2024-33-01 10:33:08.500 [http-nio-8080-exec-8] INFO  ru.kozarez.restapp.controllers.MainController - Received JSON person: PersonModel(name=Тест, surname=Тестов, patronymic=Тестович, birthDate=1990-01-01, gender=MAN, document=DocumentModel(series=1333, number=112233, type=PASSPORT, issueDate=2020-01-01))
+2024-33-01 10:33:08.505 [http-nio-8080-exec-8] INFO  ru.kozarez.restapp.services.MainService - Put received person to database
+2024-33-01 10:33:08.512 [http-nio-8081-exec-3] INFO  ru.kozarez.soapapp.controllers.SoapController - Received XML: <PersonModel>
+  <name>Тест</name>
+  <surname>Тестов</surname>
+  <patronymic>Тестович</patronymic>
+  <birthDate>1990</birthDate>
+  <birthDate>1</birthDate>
+  <birthDate>1</birthDate>
+  <gender>MAN</gender>
+  <document>
+    <series>1333</series>
+    <number>112233</number>
+    <type>PASSPORT</type>
+    <issueDate>2020</issueDate>
+    <issueDate>1</issueDate>
+    <issueDate>1</issueDate>
+  </document>
+</PersonModel>
+
+2024-33-01 10:33:08.524 [http-nio-8081-exec-3] INFO  ru.kozarez.soapapp.services.ConvertService - Successfully transform XML
+2024-33-01 10:33:08.524 [http-nio-8081-exec-3] INFO  ru.kozarez.soapapp.controllers.SoapController - Sent response back
+2024-33-01 10:33:08.532 [http-nio-8080-exec-8] ERROR ru.kozarez.restapp.services.MainService - XML to pojo converting error: Cannot deserialize value of type `java.time.LocalDate` from String "1": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '1' could not be parsed at index 0
+ at [Source: (StringReader); line: 1, column: 1] (through reference chain: ru.kozarez.restapp.models.PersonModel["birthDate"])
+2024-33-01 10:33:08.533 [http-nio-8080-exec-8] ERROR ru.kozarez.restapp.controllers.MainController - JSON processing exception: {}
+java.lang.RuntimeException: Error converting XML to POJO
+	at ru.kozarez.restapp.services.MainService.send(MainService.java:82) ~[classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352) ~[spring-aop-6.1.2.jar:6.1.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.2.jar:6.1.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.2.jar:6.1.2]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765) ~[spring-aop-6.1.2.jar:6.1.2]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-6.1.2.jar:6.1.2]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385) ~[spring-tx-6.1.2.jar:6.1.2]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.2.jar:6.1.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.2.jar:6.1.2]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765) ~[spring-aop-6.1.2.jar:6.1.2]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717) ~[spring-aop-6.1.2.jar:6.1.2]
+	at ru.kozarez.restapp.services.MainService$$SpringCGLIB$$0.send(<generated>) ~[classes/:?]
+	at ru.kozarez.restapp.controllers.MainController.send(MainController.java:24) [classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262) [spring-web-6.1.2.jar:6.1.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) [spring-web-6.1.2.jar:6.1.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) [spring-webmvc-6.1.2.jar:6.1.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917) [spring-webmvc-6.1.2.jar:6.1.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829) [spring-webmvc-6.1.2.jar:6.1.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-6.1.2.jar:6.1.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) [spring-webmvc-6.1.2.jar:6.1.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) [spring-webmvc-6.1.2.jar:6.1.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) [spring-webmvc-6.1.2.jar:6.1.2]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) [spring-webmvc-6.1.2.jar:6.1.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [tomcat-embed-core-10.1.17.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) [spring-webmvc-6.1.2.jar:6.1.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [tomcat-embed-core-10.1.17.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.1.2.jar:6.1.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.1.2.jar:6.1.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.1.2.jar:6.1.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.1.2.jar:6.1.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.1.2.jar:6.1.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.1.2.jar:6.1.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-10.1.17.jar:10.1.17]
+	at java.base/java.lang.Thread.run(Thread.java:840) [?:?]
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDate` from String "1": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '1' could not be parsed at index 0
+ at [Source: (StringReader); line: 1, column: 1] (through reference chain: ru.kozarez.restapp.models.PersonModel["birthDate"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1958) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1245) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.datatype.jsr310.deser.JSR310DeserializerBase._handleDateTimeException(JSR310DeserializerBase.java:176) ~[jackson-datatype-jsr310-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer._fromString(LocalDateDeserializer.java:178) ~[jackson-datatype-jsr310-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer.deserialize(LocalDateDeserializer.java:91) ~[jackson-datatype-jsr310-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer.deserialize(LocalDateDeserializer.java:37) ~[jackson-datatype-jsr310-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:310) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.dataformat.xml.deser.XmlDeserializationContext.readRootValue(XmlDeserializationContext.java:91) ~[jackson-dataformat-xml-2.13.4.jar:2.13.4]
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4899) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3846) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3814) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at ru.kozarez.restapp.services.MainService.send(MainService.java:79) ~[classes/:?]
+	... 66 more
+Caused by: java.time.format.DateTimeParseException: Text '1' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052) ~[?:?]
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954) ~[?:?]
+	at java.base/java.time.LocalDate.parse(LocalDate.java:430) ~[?:?]
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer._fromString(LocalDateDeserializer.java:176) ~[jackson-datatype-jsr310-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer.deserialize(LocalDateDeserializer.java:91) ~[jackson-datatype-jsr310-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer.deserialize(LocalDateDeserializer.java:37) ~[jackson-datatype-jsr310-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:310) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.dataformat.xml.deser.XmlDeserializationContext.readRootValue(XmlDeserializationContext.java:91) ~[jackson-dataformat-xml-2.13.4.jar:2.13.4]
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4899) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3846) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3814) ~[jackson-databind-2.16.1.jar:2.16.1]
+	at ru.kozarez.restapp.services.MainService.send(MainService.java:79) ~[classes/:?]
+	... 66 more
+2024-33-01 10:33:45.095 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-33-01 10:33:49.313 [main] INFO  ru.kozarez.restapp.RestAppApplication - Starting RestAppApplication using Java 17.0.9 with PID 12616 (C:\Users\kozarez\java-projects\RestSoap\RestSoapDataTransformer\RestApp\target\classes started by kozarez in C:\Users\kozarez\java-projects\RestSoap\RestSoapDataTransformer)
+2024-33-01 10:33:49.320 [main] INFO  ru.kozarez.restapp.RestAppApplication - No active profile set, falling back to 1 default profile: "default"
+2024-33-01 10:33:49.873 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-33-01 10:33:49.891 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2024-33-01 10:33:50.107 [main] WARN  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-33-01 10:33:50.124 [main] INFO  org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-33-01 10:33:50.355 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-33-01 10:33:50.415 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1058 ms
+2024-33-01 10:33:50.663 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-33-01 10:33:50.706 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-33-01 10:33:50.942 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-33-01 10:33:51.153 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-33-01 10:33:52.008 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-33-01 10:33:52.104 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-33-01 10:33:52.289 [main] INFO  org.springframework.ws.soap.saaj.SaajSoapMessageFactory - Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2024-33-01 10:33:52.379 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-33-01 10:33:52.753 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-33-01 10:33:52.765 [main] INFO  ru.kozarez.restapp.RestAppApplication - Started RestAppApplication in 3.795 seconds (process running for 4.715)
+2024-33-01 10:33:54.770 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-33-01 10:33:54.771 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-33-01 10:33:54.908 [http-nio-8080-exec-2] INFO  ru.kozarez.restapp.controllers.MainController - Received JSON person: PersonModel(name=Тест, surname=Тестов, patronymic=Тестович, birthDate=1990-01-01, gender=MAN, document=DocumentModel(series=1333, number=112233, type=PASSPORT, issueDate=2020-01-01))
+2024-33-01 10:33:54.969 [http-nio-8080-exec-2] INFO  ru.kozarez.restapp.services.MainService - Put received person to database
+2024-33-01 10:33:55.136 [http-nio-8081-exec-4] INFO  ru.kozarez.soapapp.controllers.SoapController - Received XML: <PersonModel>
+  <name>Тест</name>
+  <surname>Тестов</surname>
+  <patronymic>Тестович</patronymic>
+  <birthDate>1990-01-01</birthDate>
+  <gender>MAN</gender>
+  <document>
+    <series>1333</series>
+    <number>112233</number>
+    <type>PASSPORT</type>
+    <issueDate>2020-01-01</issueDate>
+  </document>
+</PersonModel>
+
+2024-33-01 10:33:55.144 [http-nio-8081-exec-4] INFO  ru.kozarez.soapapp.services.ConvertService - Successfully transform XML
+2024-33-01 10:33:55.144 [http-nio-8081-exec-4] INFO  ru.kozarez.soapapp.controllers.SoapController - Sent response back
+2024-33-01 10:33:55.214 [http-nio-8080-exec-2] INFO  ru.kozarez.restapp.services.MainService - Put converted person to database
+2024-35-01 10:35:57.488 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-36-01 10:36:02.335 [main] INFO  ru.kozarez.restapp.RestAppApplication - Starting RestAppApplication using Java 17.0.9 with PID 8144 (C:\Users\kozarez\java-projects\RestSoap\RestSoapDataTransformer\RestApp\target\classes started by kozarez in C:\Users\kozarez\java-projects\RestSoap\RestSoapDataTransformer)
+2024-36-01 10:36:02.343 [main] INFO  ru.kozarez.restapp.RestAppApplication - No active profile set, falling back to 1 default profile: "default"
+2024-36-01 10:36:02.890 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-36-01 10:36:02.908 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2024-36-01 10:36:03.134 [main] WARN  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-36-01 10:36:03.151 [main] INFO  org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-36-01 10:36:03.399 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-36-01 10:36:03.472 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1100 ms
+2024-36-01 10:36:03.701 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-36-01 10:36:03.735 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-36-01 10:36:03.972 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-36-01 10:36:04.190 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-36-01 10:36:05.031 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-36-01 10:36:05.111 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-36-01 10:36:05.228 [main] INFO  org.springframework.ws.soap.saaj.SaajSoapMessageFactory - Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2024-36-01 10:36:05.331 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-36-01 10:36:05.673 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-36-01 10:36:05.691 [main] INFO  ru.kozarez.restapp.RestAppApplication - Started RestAppApplication in 3.708 seconds (process running for 4.601)
+2024-36-01 10:36:08.694 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-36-01 10:36:08.695 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-36-01 10:36:08.845 [http-nio-8080-exec-2] INFO  ru.kozarez.restapp.controllers.MainController - Received JSON person: PersonModel(name=Тест, surname=Тестов, patronymic=Тестович, birthDate=1990-01-01, gender=MAN, document=DocumentModel(series=1333, number=112233, type=PASSPORT, issueDate=2020-01-01))
+2024-36-01 10:36:08.907 [http-nio-8080-exec-2] INFO  ru.kozarez.restapp.services.MainService - Put received person to database
+2024-36-01 10:36:09.045 [http-nio-8081-exec-6] INFO  ru.kozarez.soapapp.controllers.SoapController - Received XML: <PersonModel>
+  <name>Тест</name>
+  <surname>Тестов</surname>
+  <patronymic>Тестович</patronymic>
+  <birthDate>1990-01-01</birthDate>
+  <gender>MAN</gender>
+  <document>
+    <series>1333</series>
+    <number>112233</number>
+    <type>PASSPORT</type>
+    <issueDate>2020-01-01</issueDate>
+  </document>
+</PersonModel>
+
+2024-36-01 10:36:09.055 [http-nio-8081-exec-6] INFO  ru.kozarez.soapapp.services.ConvertService - Successfully transform XML
+2024-36-01 10:36:09.056 [http-nio-8081-exec-6] INFO  ru.kozarez.soapapp.controllers.SoapController - Sent response back
+2024-36-01 10:36:09.126 [http-nio-8080-exec-2] INFO  ru.kozarez.restapp.services.MainService - Put converted person to database
+2024-48-01 10:48:15.875 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-48-01 10:48:20.076 [main] INFO  ru.kozarez.restapp.RestAppApplication - Starting RestAppApplication using Java 17.0.9 with PID 7344 (C:\Users\kozarez\java-projects\RestSoap\RestSoapDataTransformer\RestApp\target\classes started by kozarez in C:\Users\kozarez\java-projects\RestSoap\RestSoapDataTransformer)
+2024-48-01 10:48:20.085 [main] INFO  ru.kozarez.restapp.RestAppApplication - No active profile set, falling back to 1 default profile: "default"
+2024-48-01 10:48:20.552 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-48-01 10:48:20.569 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2024-48-01 10:48:20.748 [main] WARN  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-48-01 10:48:20.768 [main] INFO  org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-48-01 10:48:20.962 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-48-01 10:48:21.023 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 905 ms
+2024-48-01 10:48:21.203 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-48-01 10:48:21.235 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-48-01 10:48:21.443 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-48-01 10:48:21.634 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-48-01 10:48:22.383 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-48-01 10:48:22.456 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-48-01 10:48:22.555 [main] INFO  org.springframework.ws.soap.saaj.SaajSoapMessageFactory - Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2024-48-01 10:48:22.636 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-48-01 10:48:22.935 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-48-01 10:48:22.946 [main] INFO  ru.kozarez.restapp.RestAppApplication - Started RestAppApplication in 3.147 seconds (process running for 3.906)

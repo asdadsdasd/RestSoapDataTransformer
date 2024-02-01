@@ -10,10 +10,12 @@ import lombok.RequiredArgsConstructor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.query.sqm.sql.ConversionException;
+import org.jboss.jandex.Main;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.kozarez.restapp.clients.SoapSenderClient;
+import ru.kozarez.restapp.dao.MainDAOImplementation;
 import ru.kozarez.restapp.dao.MainDAOInterface;
 import ru.kozarez.restapp.entities.PersonEntity;
 import ru.kozarez.restapp.models.PersonModel;
@@ -24,27 +26,34 @@ import java.text.SimpleDateFormat;
 public class MainService {
     private static final Logger logger = LogManager.getLogger(MainService.class);
     @Autowired
-    private final MainDAOInterface mainDAO;
+    private MainDAOInterface mainDAO;
 
     @Autowired
-    private final SoapSenderClient soapSenderClient;
+    private SoapSenderClient soapSenderClient;
+
+    private final ObjectMapper objectMapper;
+
+    private final ObjectMapper xmlMapper;
+
+    public MainService(){
+        objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new JavaTimeModule());
+
+        xmlMapper = new XmlMapper();
+        xmlMapper.registerModule(new JavaTimeModule());
+        xmlMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
+        xmlMapper.enable(SerializationFeature.INDENT_OUTPUT);
+    }
+
 
     @Transactional
     public String send(PersonModel personModel) {
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.registerModule(new JavaTimeModule());
-
         PersonEntity personEntity = objectMapper.convertValue(personModel, PersonEntity.class);
 
         mainDAO.create(personEntity);
         logger.info("Put received person to database");
 
-        ObjectMapper xmlMapper = new XmlMapper();
-        xmlMapper.registerModule(new JavaTimeModule());
-        xmlMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
-        xmlMapper.enable(SerializationFeature.INDENT_OUTPUT);
         String xmlText;
-
 
         try {
             xmlText = xmlMapper.writeValueAsString(personModel);
@@ -52,7 +61,6 @@ public class MainService {
             logger.error("Pojo to XML converting exception: {}", e.getMessage());
             throw new ConversionException("Pojo to XML converting exception", e);
         }
-
 
         GetConvertedXmlResponse response;
 
